@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+        <link rel="stylesheet" href="style01.css">
+        <script src="field.js"></script>
+        <script src="sketch.js"></script>
+        <script src="Ball.js"></script>
+        <script src="functions.js"></script>
+        <script src="multiArray.js"></script>
+        <script src="rk4.js"></script>
+    </head>
+    <body>
+        <h1>Bubbles in a Vector Field</h1>
+        <div id="theGraphics"></div> <!-- this is placed at the center of the screen, it is square -->
+        <div id="field-input-box">
+        <h2 class="field-descript">Field</h2>
+        <p>x' = <input type="number" value="-1" id="a-coef" class="inputNum">*x + <input   type="number" value="1" id="b-coef" class="inputNum">*y <br>
+        y' = <input type="number" value="-1" id="c-coef" class="inputNum">*x + <input type="number" value="-1" id="d-coef" class="inputNum">*y <br>
+        <button id="submit-field" type="button" onclick="updateCoef()" class="buttons">submit</button>
+        </p>
+        
+        <div class="nonlin"><h2>Nonlinear</h2>
+            <span class="nonlin-info">Switch to non-linear vector field. Submit equations in JavaScript format i.e. x^2 --> x**2 or tan x --> Math.tan(x)</span>
+        </div>
+        <p>
+            x(x,y)' = <input type="text" value="Math.cos(x + y)" id="nonlin-x" class="inputFunction"> <br>
+            y(x,y)' = <input type="text" value="Math.sin(x - y)" id="nonlin-y" class="inputFunction"><br>
+            <button id="nonlin-submit" type="button" onclick="changeToNonlinear()" class="buttons">nonlinear field</button>
+            <button id="rand-field" type="button" onclick="randomField()" class="buttons">random field</button>
+        </p>
+        
+        <h2 class="field-descript">New Point</h2>
+        <p>x = <input type="number" value="0" id="newPtX" class="inputNum"> <br>
+            y = <input type="number" value="0" id="newPtY" class="inputNum"> <br>
+            <button id="submit-point" type="button" onclick="newPt()" class="buttons">submit</button>
+        </p>
+            
+        <h2>Axis Dimensions</h2>
+        <p> x: <input type="number" value="-5" id="xmin-input" class="inputNum"> to
+            <input type="number" value="5" id="xmax-input" class="inputNum"> <br>
+            y: <input type="number" value="-5" id="ymin-input" class="inputNum"> to
+            <input type="number" value="5" id="ymax-input" class="inputNum"> <br>
+            <button id="change-axes" type="button" onclick="changeAxes()" class="buttons">submit</button>
+        </p>
+        
+        <button id="clear-pts" type="button" onclick="clearPts()" class="buttons">Clear All Points</button> <br> <br>
+        
+        <button id="stream-toggle" type="button" onclick="toggleStream()" class="buttons">Toggle Streamline</button>
+        </div>
+        
+        <div id="show-mouse-data">
+            <p id="mouse-location"></p>
+        </div>
+    </body>
+</html>

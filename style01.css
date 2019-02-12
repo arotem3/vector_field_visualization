@@ -1,0 +1,122 @@
+body {
+    font-family: monospace;
+    background-color: darkslategrey;
+}
+h1, #show-mouse-data {
+    text-align: center;
+    
+    background-color: rgb(32,32,32);
+    color: aqua;
+    width: 20%;
+    height: 2.5em;
+    padding-top: 1.25em;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: absolute;
+    top: 10%;
+}
+
+#show-mouse-data {
+    left: 75%;
+    padding-top: 1em;
+    height: 4em;
+    top: 20%;
+}
+
+.field-descript {
+    padding-left: 5%;
+    
+}
+
+.inputNum {
+    width: 40px;
+    color: darkorange;
+    background-color: rgb(32,32,32);
+    border: none;
+    text-align: right;
+    font-family: "courier", monospace;
+}
+
+#field-input-box {
+    width: 20%;
+    padding: 2%;
+    background-color: rgb(32,32,32);
+    color: aqua;
+    position: absolute;
+    top: 25%;
+}
+
+.buttons {
+    position: relative;
+    left: 5%;
+    top: 10px;
+    width: 30%;
+    height: 2em;
+    background-color: darkslategray;
+    border: none;
+    color: deeppink;
+    font-family: monospace;
+}
+
+#clear-pts {
+    width: 40%;
+    left: 0%;
+}
+
+#stream-toggle {
+    width: 40%;
+    left: 0%;
+}
+
+.inputFunction {
+    width: 200px;
+    color: darkorange;
+    background-color: rgb(32,32,32);
+    border: none;
+    text-align: left;
+    overflow: hidden;
+    font-family: "courier", monospace;
+}
+
+#nonlin-submit {
+    width: 40%;
+    left: 0%;
+}
+
+.nonlin {
+    position: relative;
+    display: inline-block;
+    padding-left: 5%;
+}
+
+.nonlin .nonlin-info {
+    visibility: hidden;
+    width: 360px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.nonlin .nonlin-info::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.nonlin:hover .nonlin-info {
+    visibility: visible;
+    opacity: 1;
+}
